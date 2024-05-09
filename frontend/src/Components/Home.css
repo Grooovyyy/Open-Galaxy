@@ -1,0 +1,24 @@
+.logo {
+    height: 40px;
+    width: 40px;
+}
+.fblogo {
+    height: 50px;
+    width: 50px;
+}
+footer{
+    background-color: transparent;
+}
+.logo :hover{
+    transform: e2;
+}
+
+
+
+footer .container{
+    background-color: #243b55;
+}
+
+.text-center{
+    background-color: #243b55;
+}
