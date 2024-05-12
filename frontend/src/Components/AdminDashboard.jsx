@@ -66,11 +66,11 @@ const AdminDashboard = () => {
       </li>
 
       <li>
-        <a href="#">
+        <a href="/FeedbackPage">
           <span className="icon">
             <ion-icon name="lock-closed-outline" />
           </span>
-          <span className="text-secondary">Password</span>
+          <span className="text-secondary">Feedbacks</span>
         </a>
       </li>
       <li>
