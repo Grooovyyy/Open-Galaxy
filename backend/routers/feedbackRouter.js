@@ -4,7 +4,6 @@ const Model = require('../model/FeedbackModel');
 
 router.post('/add', (req, res) => {
     console.log(req.body);
-    // Storing data to mongodb
     new Model(req.body).save()
         .then((result) => {
             res.json(result)
@@ -14,7 +13,7 @@ router.post('/add', (req, res) => {
         });
 });
 router.get('/getall', (req, res) => {
-    Model.find({}) //empty brackets will give all the data
+    Model.find({}) 
         .then((result) => {
             res.json(result)
         }).catch((err) => {
@@ -22,9 +21,9 @@ router.get('/getall', (req, res) => {
             res.status(500).json(err)
         });
 });
-// since mongodb automatically generates id so we can use it also
+
 router.get('/getbyid/:id', (req, res) => {
-    // getting data from client
+ 
     console.log(req.params.id);
 
     // finding the data with given id

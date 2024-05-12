@@ -27,7 +27,7 @@ const Projects = () => {
   const [currentPage, setCurrentPage] = useState(1);
 
   // Products per page
-  const productsPerPage = 4;
+  const productsPerPage = 10;
 
   // Calculate total pages
   const totalPages = Math.ceil(products.length / productsPerPage);
