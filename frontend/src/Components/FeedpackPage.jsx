@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import "./FeedbackPage.css"
 function FeedbackPage() {
     const [feedbacks, setFeedbacks] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -23,20 +23,20 @@ function FeedbackPage() {
     }, []);
 
     return (
-        <div>
+        <div className='body'>
             <h1>Feedback Messages</h1>
-            {loading ? (
-                <p>Loading...</p>
-            ) : (
-                <ul>
+            <table className="rwd-table feedback-table">
+                <tbody>
                     {feedbacks.map(feedback => (
-                        <li key={feedback._id}>
-                            <p>{feedback.message}</p>
-                            <p>From: {feedback.sender}</p>
-                        </li>
+                        <tr key={feedback._id} className="feedback-row">
+                            <td>&ensp; From: {feedback.name}</td>
+                            <td>&ensp; Email: {feedback.email}</td>
+                            <td>&ensp; Date: {feedback.createdAt}</td>
+                            <td>{feedback.message}</td>
+                        </tr>
                     ))}
-                </ul>
-            )}
+                </tbody>
+            </table>
         </div>
     );
 }

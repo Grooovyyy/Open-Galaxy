@@ -220,8 +220,8 @@ tr td{
 /* ======================= Cards ====================== */
 .cardBox {
   position: relative;
-  width: 100%;
-  padding: 20px;
+  width: 800%;
+  padding: 5% 0;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 30px;

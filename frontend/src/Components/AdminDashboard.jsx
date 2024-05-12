@@ -100,7 +100,7 @@ const AdminDashboard = () => {
       </div>
     </div>
     {/* ======================= Cards ================== */}
-    <div className="cardBox">
+    <div className="cardBox w-100">
       <div className="card">
         <div>
           <div className="numbers">100</div>
