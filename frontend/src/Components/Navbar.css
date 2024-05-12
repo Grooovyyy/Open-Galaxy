@@ -44,7 +44,7 @@ body {
 
 /* Navbar Styling */
 nav {
-    position: fixed;
+    position: absolute;
     width: 100%;
     padding: 20px 0;
     z-index: 999;
@@ -223,7 +223,7 @@ section .title span {
     color: var(--black-color);
     font-size: 30px;
     font-weight: 600;
-    position: relative;
+    position: absolute;
     padding-bottom: 8px;
 }
 
@@ -466,7 +466,7 @@ footer .text span a:hover {
 
 /* Scroll To Top Button CSS */
 .scroll-button a {
-    position: fixed;
+    position: absolute;
     bottom: 20px;
     right: 20px;
     color: var(--white-color);
@@ -783,7 +783,7 @@ span:hover {
 .green .progress,
 .red .progress,
 .orange .progress {
-    position: relative;
+    position: absolute;
     border-radius: 50%;
 }
 
