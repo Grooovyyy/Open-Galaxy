@@ -14,6 +14,7 @@
   box-sizing: border-box;
   font-family: 'Montserrat', sans-serif;
   position: relative;
+  justify-content: center;
 }
 
 h2.contact {
@@ -22,6 +23,7 @@ h2.contact {
   width: 180px;
   color: #54548d;
   border-bottom: 3px solid #78788c;
+  justify-content: center;
 }
 
 input {
@@ -36,6 +38,7 @@ input {
   font-family: 'Montserrat', sans-serif;
   transition: all 0.3s;
   border-bottom: 2px solid #bebed2;
+  justify-content: center;
 }
 
 input:focus {
@@ -48,6 +51,7 @@ p:before {
   margin: 28px 0 0;
   font-size: 14px;
   color: #5a5a5a;
+  justify-content: center;
 }
 
 button {
@@ -60,15 +64,16 @@ button {
   color: #5a5a6e;
   cursor: pointer;
   transition: all 0.3s;
+  justify-content: center;
 }
 
 button:hover {
   background: #78788c;
   color: #fff;
+  justify-content: center;
 }
 
 div.form-group {
-  content: 'Hi';
   position: relative;
   margin-top: 10px;
   bottom: -15px;
@@ -76,7 +81,7 @@ div.form-group {
   background: #243b55;
   color: #fff;
   width: 320px;
-  margin-left: 600px;
+  justify-content: center;
   padding: 16px 4px 16px 0;
   border-radius: 6px;
   font-size: 13px;
@@ -85,4 +90,5 @@ div.form-group {
 
 span {
   margin: 0 5px 0 15px;
+  justify-content: center;
 }
