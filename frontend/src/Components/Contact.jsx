@@ -7,6 +7,21 @@ const ContactPage = () => {
   const { enqueueSnackbar } = useSnackbar();
 
   return (
+    <div className="contact-card">    
+      <section className="contact" id="contact">
+        <div className="content">
+          <div className="title">
+            <span>Contact US</span>
+          </div>
+          <div className="text">{/* ... (contact details and icons) ... */}</div>
+        </div>
+      </section>
+
+      <div className="container mt-1">
+        <div className="row justify-content-center">
+          <div className="col-md-8">
+            <div className="card">
+              <div className="card-body">
                 <Formik
                   initialValues={{
                     name: '',
@@ -16,7 +31,7 @@ const ContactPage = () => {
                   }}
                   onSubmit={async (values, { resetForm }) => {
                     console.log(values);
-                    
+
                     const res = await fetch("http://localhost:3000/feedback/add", { // Updated URL
                       method: 'POST',
                       body: JSON.stringify(values),
@@ -26,7 +41,7 @@ const ContactPage = () => {
                     });
 
                     console.log(res.status);
-                    if (res.status === 200) { // Changed status check to match the server response
+                    if (res.status === 201) { // Changed status check to match the server response
                       enqueueSnackbar("Message sent successfully", { variant: "success" });
                       resetForm();
                     } else {
@@ -36,14 +51,7 @@ const ContactPage = () => {
                 >
                   {formik => (
                     <Form>
-                      <br />
-                      <br />
-                      <br />
-                      <br />
-                      <br />
-                  
                       <div className="form-group">
-                      <h2 className='text-white'>CONTACT US</h2>
                         <label htmlFor="name" className='text-secondary'>Name:</label>
                         <Field
                           style={{  width: '100%', padding: '10px', border: '2px solid #067a75', borderRadius: '5px', backgroundColor: 'transparent', color: '#fff', }}
@@ -78,14 +86,14 @@ const ContactPage = () => {
                           id="phone"
                         />
                         <ErrorMessage name="phone" component="div" className="text-danger" />
-                      </div>
+                      </div>    
                       <div className="form-group">
-                        <label htmlFor="message" className='text-secondary'>Message:</label>
+                        <label htmlFor="message" className='text-secondary'>Message</label>
                         <Field
                           style={{ width: '100%', padding: '10px', border: '2px solid #067a75', borderRadius: '5px', backgroundColor: 'transparent', color: '#fff', }}
-                          as="textarea"
+                          type="text"
                           className="form-control"
-                          placeholder="Enter your message"
+                          placeholder="Enter Project Code"
                           name="message"
                           id="message"
                         />
@@ -95,6 +103,12 @@ const ContactPage = () => {
                     </Form>
                   )}
                 </Formik>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 
