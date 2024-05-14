@@ -5,6 +5,7 @@ import './Navbar.css'
 
 const Navbar = () => {
   return (
+<div class="logo" border="0">
     <nav>
     <div className="navbar">
       <div className="logo">
@@ -18,7 +19,7 @@ const Navbar = () => {
           <a href="#about">About</a>
         </li> */}
         <li className="li">
-          <a href="/Getstarted">Admin Login</a>
+          <a href="/Github_Login">User Login</a>
         </li>
         <li className="li">
           <a href="/Projects">Projects</a>
@@ -27,7 +28,7 @@ const Navbar = () => {
           <a href="/Contact">Contact</a>
         </li>
         <li className="li">
-          <a href="/AdminDashboard">Admin Dashboard</a>
+          <a href="/AdminDashboard">User Dashboard</a>
         </li>
         <div className="cancel-btn">
           <i className="fas fa-times" />
@@ -49,6 +50,7 @@ const Navbar = () => {
       <i className="fas fa-bars" />
     </div>
   </nav>
+  </div>
 
 
 

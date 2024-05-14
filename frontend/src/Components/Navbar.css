@@ -6,7 +6,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    text-decoration: none;
+    text-decoration: dashed;
     scroll-behavior: smooth;
 }
 
@@ -42,17 +42,20 @@ body {
     background: var(--primary-color);
 }
 
-/* Navbar Styling */
+
 nav {
-    position: absolute;
-    width: 100%;
-    padding: 20px 0;
+    background: rgba(0, 0, 0, 0.352);
+    position: fixed;
+    width: 45%;
+    margin-left: 25%;
     z-index: 999;
     transition: all 0.3s ease;
+    border-radius: 100px;
 }
 
+
 nav.sticky {
-    background: var(--primary-color);
+    background: rgba(255, 0, 0, 0.8);
     padding: 13px 0;
 }
 

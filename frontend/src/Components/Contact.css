@@ -1,11 +1,12 @@
 .title {
   margin-top:100px
 }
+
 .form {
   margin-top: 100px;
   width: 340px;
   height: 440px;
-  background: #e6e6e6;
+  background: transparent;
   border-radius: 8px;
   box-shadow: 0 0 40px -10px #000;
   margin: calc(50vh - 220px) auto;
@@ -31,15 +32,17 @@ input {
   width: 100%;
   padding: 10px;
   box-sizing: border-box;
-  background: none;
+  background-image: none; 
   outline: none;
   resize: none;
-  border: 0;
+  border:#000;
+  border-radius: 100%;
   font-family: 'Montserrat', sans-serif;
   transition: all 0.3s;
   border-bottom: 2px solid #bebed2;
   justify-content: center;
 }
+
 
 input:focus {
   border-bottom: 2px solid #78788c;

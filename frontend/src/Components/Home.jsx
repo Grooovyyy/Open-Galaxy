@@ -26,14 +26,15 @@ const Home = () => {
            <img src="Open Galaxy.png" alt=""></img>
         </div>
         
-        <div className="text-three">Lorem, ipsum dolor.</div>
-        <div className="text-four">Lorem ipsum dolor sit amet. </div>
+        <div className="text-three">Hands-on learning</div>
+        <div className="text-four">Create a portfolio that stands out</div>
       </div>
     </div>
   </section>
   <section className="about" id="about">
     <div className="content">
       <div className="title">
+        <br />
         <span>About</span>
       </div>
       <div className="about-details">
@@ -41,9 +42,9 @@ const Home = () => {
           {/* <img src="" alt="" /> */}
         </div>
         <div className="right">
-          <div className="topic">Lorem ipsum dolor sit amet.</div>
+          <div className="topic">OpenGalaxy opens doors to a global network</div>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt asperiores tempora possimus recusandae aperiam, consectetur laboriosam alias dignissimos. Nihil nulla eum incidunt, totam molestias repudiandae pariatur alias quae deleniti consequuntur laborum dolorum.
+          In a nutshell, OpenGalaxy is like an open book that anyone can read, write and add new chapters to. This openness means more brains working together, which often leads to smarter solutions.
           </p>
         </div>
       </div>
@@ -56,9 +57,10 @@ const Home = () => {
       </div>
       <div className="skills-details">
         <div className="text">
-          <div className="topic">Lorem ipsum dolor sit amet consectetur.e</div>
+          <div className="topic">Connect with mentors, peers, and industry experts</div>
           <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta iure impedit fugit!
+          This community becomes your support system as you navigate the tech world, ensuring continuous growth.
+
           </p>
         </div>
         <div className="boxes">{/* Checkboxes */}</div>

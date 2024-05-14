@@ -7,7 +7,7 @@ const ContactPage = () => {
   const { enqueueSnackbar } = useSnackbar();
 
   return (
-    <div className="contact-card">    
+    <div className="contact-card" >    
       <section className="contact" id="contact">
         <div className="content">
           <div className="title">
