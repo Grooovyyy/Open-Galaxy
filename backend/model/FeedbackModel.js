@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const {Schema, model} = require('../connection');
 
 const feedbackSchema = new mongoose.Schema({
     name: {
