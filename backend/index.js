@@ -23,7 +23,8 @@ const UserDataRouter = require('./routers/UserData')
 const UserRouter = require('./routers/userRouter')
 const ContactRouter = require('./routers/ContactRouter')
 const FeedbackRouter = require('./routers/feedbackRouter') 
-
+const ProjectRouter = require('./routers/project');
+const TaskRouter = require('./routers/Task');
 
 app.use(cors({
     origin: ['http://localhost:5173']
@@ -33,6 +34,9 @@ app.use('/userData', UserDataRouter)
 app.use('/user', UserRouter)
 app.use('/Contact', ContactRouter)
 app.use('/Feedback', FeedbackRouter)
+app.use('/project', ProjectRouter);
+app.use('/task', TaskRouter);
+
 
 
 // Configure GitHub strategy for Passport

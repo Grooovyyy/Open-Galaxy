@@ -1,45 +1,48 @@
-import React,{ useState } from 'react'
-import Navbar from './Components/Navbar'
-import{BrowserRouter, Routes, Route} from 'react-router-dom'
-import Home from './Components/Home'
-
-import Getstarted from './Components/Getstarted'
+import React, { useState } from 'react'
+// import Navbar from './Components/Navbar'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { SnackbarProvider } from 'notistack'
-import ContactPage from './Components/Contact'
-import Projects from './Components/Projects'
-import AdminDashboard from './Components/AdminDashboard'
-import FeedbackPage from './Components/FeedpackPage'
-import ProjectSignup from './Components/ProjectSignup'
-import ProductPage from './Components/ProductPage'
-import AppContext from './Components/AppContext'
+import {AppProvider} from './AppContext'
 import Github_Login from './Components/Github_Login'
 
+import './App.css'
+
+import Home_header from './Components/Home_header'
+import Home_sidebar from './Components/Home_sidebar'
+import Home from './Components/Home'
+import AddProject from './Components/AddProject'
+import ManageGithubUser from './Components/ManageGithubUser'
+import ManageProjects from './Components/ManageProjects'
+import Project from './Components/Project'
+import ViewProject from './Components/ViewProject'
 
 
+const App = () => {
+  return (
 
-  const App = () => {
-    return (
-
-          <div>
-              <BrowserRouter>
-              <SnackbarProvider>
-              <Navbar />
-              <Routes>
-                  <Route path="/Home" element={<Home />} />
-                  <Route path="/Getstarted" element={<Getstarted />} />
-                  <Route path="/Contact" element={<ContactPage />} />
-                  <Route path="/Projects" element={<Projects />} />
-                  <Route path="/AdminDashboard" element={<AdminDashboard />} />
-                  <Route path="/FeedbackPage" element={<FeedbackPage />} />
-                  <Route path="/ProjectSignup" element={<ProjectSignup />} />
-                  <Route path="/ProductPage" element={<ProductPage />} />
-                  <Route path="/authenticated/:githubusername" element={<Home />} />
-                  <Route path='/Github_Login' element={<Github_Login />} />
-                  <Route path='/AppContext' element={<AppContext />} />
-              </Routes>
-              </SnackbarProvider>
-              </BrowserRouter>
-          </div>
+    <div>
+      <BrowserRouter>
+        <AppProvider>
+          <SnackbarProvider>
+            <Home_header />
+            <Home_sidebar />
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/Home" element={<Home />} />
+              <Route path="/authenticated/:githubusername" element={<Home />} />
+              <Route path='/Github_Login' element={<Github_Login />} />
+              <Route path='/AddProject' element={<AddProject />} />
+              <Route path='/AddProject' element={<AddProject />} />
+              <Route path='/ManageGithubUser' element={<ManageGithubUser />} />
+              <Route path='/ManageProjects' element={<ManageProjects />} />
+              <Route path='/Project' element={<Project />} />
+              <Route path='/ViewProject/:id' element={<ViewProject />} />
+          
+            </Routes>
+          </SnackbarProvider>
+        </AppProvider>
+      </BrowserRouter>
+    </div>
   )
 }
 
