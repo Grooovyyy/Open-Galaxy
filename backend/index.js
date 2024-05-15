@@ -3,12 +3,11 @@ const session = require('express-session');
 const passport = require('passport');
 const GitHubStrategy = require('passport-github').Strategy;
 const mongoose = require('mongoose');
-const port = 3000;
-
 
 const githubUsers = {};
 
 const app = express();
+const port = 3000;
 const cors = require('cors');
 
 // Define User model
@@ -19,24 +18,26 @@ const User = mongoose.model('User', new mongoose.Schema({
     displayName: String,
 }));
 
-const UserDataRouter = require('./routers/UserData')
-const UserRouter = require('./routers/userRouter')
-const ContactRouter = require('./routers/ContactRouter')
-const FeedbackRouter = require('./routers/feedbackRouter') 
+const UserRouter = require('./routers/userRouter');
+const ContactRouter = require('./routers/ContactRouter');
+const UtilRouter = require('./routers/Utils');
 const ProjectRouter = require('./routers/project');
+const EnrollRouter = require('./routers/Enroll');
 const TaskRouter = require('./routers/Task');
+const UserDataRouter = require('./routers/UserData')
+
 
 app.use(cors({
-    origin: ['http://localhost:5173']
+    origin: ['http://localhost:5174']
 }))
 app.use(express.json());
-app.use('/userData', UserDataRouter)
-app.use('/user', UserRouter)
-app.use('/Contact', ContactRouter)
-app.use('/Feedback', FeedbackRouter)
+app.use('/user', UserRouter);
+app.use('/contacts', ContactRouter);
+app.use('/util', UtilRouter);
 app.use('/project', ProjectRouter);
+app.use('/enroll', EnrollRouter);
 app.use('/task', TaskRouter);
-
+app.use('/userData', UserDataRouter)
 
 
 // Configure GitHub strategy for Passport
@@ -111,7 +112,14 @@ app.get('/user/:username', (req, res) => {
         res.status(401).send('Not authenticated');
     }
 });
-
+// app.get('/user/:username', (req, res) => {
+//     console.log('user : ' + githubUsers[req.params.username]);
+//     if (githubUsers[req.params.username]) {
+//         res.json(githubUsers[req.params.username]);
+//     } else {
+//         res.status(401).send('Not authenticated');
+//     }
+// });
 app.get("/logoutUser/:id", (req, res) => {
     console.log('user : ' + githubUsers[req.params.id]);
     if (githubUsers[req.params.id]) {
@@ -127,7 +135,7 @@ app.get('/', (req, res) => {
     res.send(req.isAuthenticated() ? `<p>Hello, ${req.user.displayName}! <a href="/logout">Logout</a></p>` : '<p>Hello, guest! <a href="/auth/github">Login with GitHub</a></p>');
 });
 
-
+app.use(express.static('./Uploads'));
 
 
 app.listen(port, () => {

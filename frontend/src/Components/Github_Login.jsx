@@ -1,6 +1,6 @@
 import React from 'react';
 import { enqueueSnackbar } from 'notistack';
-import useAppContext from './AppContext';
+import useAppContext from '../AppContext';
 import logo from "../assets/GL.png";
 import login from "../assets/login.gif";
 
